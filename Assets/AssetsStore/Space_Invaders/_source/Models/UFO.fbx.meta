@@ -51,7 +51,12 @@ ModelImporter:
   - first:
       137: 13700000
     second: UFO
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ufo
+    second: {fileID: 2100000, guid: 8c284ce18e02e4d4586ace5ced9cd3f6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -85,7 +90,7 @@ ModelImporter:
       internalID: 0
       firstFrame: 1
       lastFrame: 60
-      wrapMode: 0
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

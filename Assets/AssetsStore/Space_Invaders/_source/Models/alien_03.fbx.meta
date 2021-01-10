@@ -90,7 +90,17 @@ ModelImporter:
   - first:
       137: 13700002
     second: eyes
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alien_03
+    second: {fileID: 2100000, guid: 333e01debe4d72643a6d75866fd365c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alien_03_transp
+    second: {fileID: 2100000, guid: dd8df06203d610c40b802ef01aace787, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -123,8 +133,8 @@ ModelImporter:
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 60
-      wrapMode: 0
+      lastFrame: 47
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

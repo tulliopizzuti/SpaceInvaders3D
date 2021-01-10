@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public GameObject shot;
     public Text winText;
     public float fireRate = 0.997F;
+    public GameObject m_shotPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,11 @@ public class EnemyController : MonoBehaviour
                 return;
             }
 
+            if (Random.value > fireRate)
+            {
+                GameObject go = GameObject.Instantiate(m_shotPrefab, enemy.position, enemy.rotation) as GameObject;
+                GameObject.Destroy(go, 3f);
+            }
             if (enemy.position.y <= minBound){
                 // GameOver.isPlayerDead = true;
                 Time.timeScale = 0;

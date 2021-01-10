@@ -5,7 +5,6 @@ using UnityEngine;
 public class DroneController : MonoBehaviour
 {
     public GameObject m_shotPrefab;
-    public Transform m_muzzle;
     private Transform drone;
     public float speed = 0.05F;
     public float maxBound = 4.5F, minBound = -4.5F;
