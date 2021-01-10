@@ -8,6 +8,7 @@ public class DroneController : MonoBehaviour
     private Transform drone;
     public float speed = 0.05F;
     public float maxBound = 4.5F, minBound = -4.5F;
+    private GameObject lastShot;
     void Start()
     {
         drone = GetComponent<Transform>();
@@ -22,10 +23,17 @@ public class DroneController : MonoBehaviour
         else if (drone.position.x > maxBound && h > 0)
             h = 0;
         drone.position += Vector3.right * h * speed;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && lastShot == null)
         {
-            GameObject go = GameObject.Instantiate(m_shotPrefab, drone.position, drone.rotation) as GameObject;
-            GameObject.Destroy(go, 3f);
+            lastShot = GameObject.Instantiate(m_shotPrefab, drone.position, drone.rotation) as GameObject;
+            GameObject.Destroy(lastShot, 3f);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.StartsWith("shotEnemy_prefab"))
+        {
+
         }
     }
 }
