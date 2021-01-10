@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3646846496c85224ba94381848fc0793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xPosition: fcfffffffdfffffffeffffffffffffff01000000020000000300000004000000
 --- !u!4 &455716612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400034, guid: 60eed48a21427de4483339eeeaeb1e84,
@@ -804,6 +805,18 @@ PrefabInstance:
     - target: {fileID: 400034, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
+      propertyPath: m_CullingType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60eed48a21427de4483339eeeaeb1e84, type: 3}
