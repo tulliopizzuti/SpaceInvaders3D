@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemiesController : MonoBehaviour
 {
     private Transform enemyHolder;
-    public float speed=1F;
+    public float speed=0.03F;
     public float minBound = -4.5F, maxBound=4.5F;
     public float maxHeight = -5F;
     public Text winText;
