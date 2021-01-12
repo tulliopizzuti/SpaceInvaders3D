@@ -1505,7 +1505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5601d22138dd61942a9ec690584246c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUfo: {fileID: 0}
+  baseUfo: {fileID: 944188484}
+  minBound: -5
+  maxBound: 5
+  speed: 0.01
+  ufoAppear: 0.9
 --- !u!1 &841203360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1771,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_Name
-      value: UFO
+      value: UFObase
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_RootOrder
@@ -1787,15 +1791,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1803,7 +1807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1811,7 +1815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1862,6 +1866,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &944188484 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400008, guid: 925f1da9826a1c7478d9979ed2e0fb8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 944188479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962729491
 GameObject:
   m_ObjectHideFlags: 0
