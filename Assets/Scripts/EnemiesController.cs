@@ -36,7 +36,7 @@ public class EnemiesController : MonoBehaviour
             //Random.InitState(i);
             if (Random.value > fireRate)
             {
-                GameObject go = GameObject.Instantiate(m_shotPrefab, enemy.position, enemy.rotation) as GameObject;
+                GameObject go = GameObject.Instantiate(m_shotPrefab, enemy.position, enemy.rotation) as GameObject;           
                 GameObject.Destroy(go, 3f);
             }
             if (enemy.position.z <= maxHeight)

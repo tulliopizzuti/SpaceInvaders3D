@@ -33,7 +33,7 @@ public class DroneController : MonoBehaviour
     {
         if (collision.gameObject.name.StartsWith("shotEnemy_prefab"))
         {
-
+            PlayerScore.ReduceLives();
         }
     }
 }
