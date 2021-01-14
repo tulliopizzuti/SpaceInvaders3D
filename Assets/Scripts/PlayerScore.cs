@@ -1,28 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    private static int score;
-    private static int lives;
+    private int score;
+    private int lives;
     private readonly static int SCORE1 = 10;
     private readonly static int SCORE2 = 20;
     private readonly static int SCORE3 = 20;
     private readonly static int SCORE4 = 25;
     private readonly static int SCORE5 = 30;
     private readonly static int SCORE0 = 50;
+    public Text scoreText;
+    public Text livesText;
 
-    static void Init()
+    private static PlayerScore instance;
+
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public static PlayerScore GetInstancePlayerScore()
+    {
+        
+        return instance;
+    }
+
+    public PlayerScore()
+    {
+        Init();
+    }
+
+    void Init()
     {
         score = 0;
         lives = 3;
+        UpdateUI();
+    }
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
 
     }
-
-    public static void ReduceLives()
+    public void ReduceLives()
     {
         lives -= 1;
+        UpdateUI();
         if (lives <= 0)
         {
             Debug.Log("Perso");
@@ -31,7 +61,7 @@ public class PlayerScore : MonoBehaviour
 
     }
 
-    public static void ScoreCounter(string enemy)
+    public void ScoreCounter(string enemy)
     {
         switch (enemy)
         {
@@ -44,6 +74,9 @@ public class PlayerScore : MonoBehaviour
             case "3":
                 score += SCORE3;
                 break;
+            case "4":
+                score += SCORE4;
+                break;
             case "5":
                 score += SCORE5;
                 break;
@@ -55,17 +88,23 @@ public class PlayerScore : MonoBehaviour
                 break;
 
         }
+        UpdateUI();
     }
-    // Start is called before the first frame update
-    void Start()
+
+    public void UpdateUI()
     {
-        Init();
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
 
+        }
+        if (livesText != null)
+        {
+            livesText.text = lives.ToString();
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
+
 }

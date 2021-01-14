@@ -15,7 +15,7 @@ public class EnemyCollision : MonoBehaviour
             GameObject enemy = GetComponent<Transform>().gameObject;
             string tag = enemy.tag;
             Destroy(enemy);
-            PlayerScore.ScoreCounter(tag);
+            PlayerScore.GetInstancePlayerScore().ScoreCounter(tag);
         }
     }
 }

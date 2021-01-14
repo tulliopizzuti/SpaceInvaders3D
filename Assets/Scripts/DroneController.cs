@@ -9,6 +9,7 @@ public class DroneController : MonoBehaviour
     public float speed = 0.05F;
     public float maxBound = 4.5F, minBound = -4.5F;
     private GameObject lastShot;
+    float delay = 0;
     void Start()
     {
         drone = GetComponent<Transform>();
@@ -28,12 +29,19 @@ public class DroneController : MonoBehaviour
             lastShot = GameObject.Instantiate(m_shotPrefab, drone.position, drone.rotation) as GameObject;
             GameObject.Destroy(lastShot, 3f);
         }
+        if (delay > 0)
+            delay -= Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (delay > 0)
+            return;
+
+        delay = 0.5f;
         if (collision.gameObject.name.StartsWith("shotEnemy_prefab"))
         {
-            PlayerScore.ReduceLives();
+            Destroy(collision.gameObject);
+            PlayerScore.GetInstancePlayerScore().ReduceLives();
         }
     }
 }
