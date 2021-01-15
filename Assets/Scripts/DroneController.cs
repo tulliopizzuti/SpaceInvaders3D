@@ -7,7 +7,7 @@ public class DroneController : MonoBehaviour
     public GameObject m_shotPrefab;
     private Transform drone;
     public float speed = 0.05F;
-    public float maxBound = 4.5F, minBound = -4.5F;
+    public float maxBound = 7F, minBound = -7F;
     private GameObject lastShot;
     float delay = 0;
     void Start()
@@ -27,7 +27,7 @@ public class DroneController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && lastShot == null)
         {
             lastShot = GameObject.Instantiate(m_shotPrefab, drone.position, drone.rotation) as GameObject;
-            GameObject.Destroy(lastShot, 3f);
+            GameObject.Destroy(lastShot, 2f);
         }
         if (delay > 0)
             delay -= Time.deltaTime;

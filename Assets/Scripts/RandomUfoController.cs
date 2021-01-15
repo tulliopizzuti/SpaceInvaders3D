@@ -6,7 +6,7 @@ public class RandomUfoController : MonoBehaviour
 {
     public Transform baseUfo;
     private Transform ufo;
-    public float minBound = -5f, maxBound = 5f;
+    public float minBound = -7.7f, maxBound = 7.7f;
     public float speed = 0.01F;
     
     public float ufoAppear = 20F;

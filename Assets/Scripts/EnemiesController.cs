@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class EnemiesController : MonoBehaviour
 {
     private Transform enemyHolder;
-    public float speed=0.03F;
-    public float minBound = -4.5F, maxBound=4.5F;
-    public float maxHeight = -5F;
+    public float speed=0.05F;
+    public float minBound = -7F, maxBound=7F;
+    public float maxHeight = -4F;
     public float fireRate = 0.997F;
     public GameObject m_shotPrefab;
     private bool last;
@@ -43,17 +43,19 @@ public class EnemiesController : MonoBehaviour
             {
                 Debug.Log("Perso");
                 Time.timeScale = 0;
+                return;
             }
         }
         if (enemyHolder.childCount == 1 && !last) {
             CancelInvoke();
             InvokeRepeating("MoveEnemy", 0.1f,0.1f);
-            speed *= 10;
+            speed *= 7;
             last = true;
         }
         if (enemyHolder.childCount ==  0){
             Debug.Log("Vinto");
             Time.timeScale = 0;
+            return;
         }
     }
 }
