@@ -32,8 +32,6 @@ public class EnemiesController : MonoBehaviour
                 enemyHolder.position += Vector3.back * 0.5f;
                 return;
             }
-            i++;
-            //Random.InitState(i);
             if (Random.value > fireRate)
             {
                 GameObject go = GameObject.Instantiate(m_shotPrefab, enemy.position, enemy.rotation) as GameObject;           
