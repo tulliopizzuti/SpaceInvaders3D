@@ -9,16 +9,16 @@ public class EnemiesController : MonoBehaviour
     public float speed=0.03F;
     public float minBound = -4.5F, maxBound=4.5F;
     public float maxHeight = -5F;
-    public Text winText;
     public float fireRate = 0.997F;
     public GameObject m_shotPrefab;
-
+    private bool last;
     // Start is called before the first frame update
     void Start()
     {
         //winText.enabled = false;
         InvokeRepeating("MoveEnemy", 0.1f, 0.3f);
         enemyHolder = GetComponent<Transform> ();
+        last = false;
     }
 
     // Update is called once per frame
@@ -45,12 +45,15 @@ public class EnemiesController : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
-        if (enemyHolder.childCount == 1) {
+        if (enemyHolder.childCount == 1 && !last) {
             CancelInvoke();
             InvokeRepeating("MoveEnemy", 0.1f,0.1f);
+            speed *= 10;
+            last = true;
         }
         if (enemyHolder.childCount ==  0){
-            //winText.enabled = true;
+            Debug.Log("Vinto");
+            Time.timeScale = 0;
         }
     }
 }
