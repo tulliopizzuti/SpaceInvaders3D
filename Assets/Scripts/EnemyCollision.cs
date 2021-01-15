@@ -16,6 +16,10 @@ public class EnemyCollision : MonoBehaviour
             string tag = enemy.tag;
             Destroy(enemy);
             PlayerScore.GetInstancePlayerScore().ScoreCounter(tag);
+            if (tag.Equals("0"))
+            {
+                RandomUfoController.GetInstanceRandomUfoController().ReloadUfoAppear();
+            }
         }
     }
 }

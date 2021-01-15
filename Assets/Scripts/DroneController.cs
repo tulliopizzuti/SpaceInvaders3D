@@ -6,7 +6,7 @@ public class DroneController : MonoBehaviour
 {
     public GameObject m_shotPrefab;
     private Transform drone;
-    public float speed = 0.05F;
+    public float speed = 0.03F;
     public float maxBound = 7F, minBound = -7F;
     private GameObject lastShot;
     float delay = 0;

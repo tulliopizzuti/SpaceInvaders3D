@@ -8,12 +8,24 @@ public class RandomUfoController : MonoBehaviour
     private Transform ufo;
     public float minBound = -7.7f, maxBound = 7.7f;
     public float speed = 0.01F;
-    
-    public float ufoAppear = 20F;
+
+    public float ufoAppear = 10F;
+    private static RandomUfoController instance;
+
     // Start is called before the first frame update
     void Start()
     {
         InstantiateUfo();
+    }
+    void Awake()
+    {
+        instance = this;
+    }
+
+    public static RandomUfoController GetInstanceRandomUfoController()
+    {
+
+        return instance;
     }
 
     // Update is called once per frame
@@ -25,15 +37,24 @@ public class RandomUfoController : MonoBehaviour
             if (ufo.position.x < minBound || ufo.position.x > maxBound)
             {
                 Destroy(ufo.gameObject);
-                Invoke("InstantiateUfo",ufoAppear);
+                ReloadUfoAppear();
             }
         }
-        
+
     }
 
     private void InstantiateUfo()
     {
-        ufo = GameObject.Instantiate(baseUfo.gameObject, new Vector3(baseUfo.position.x, 0.3f, baseUfo.position.z), baseUfo.rotation).transform;
+        if (baseUfo != null)
+        {
+            ufo = GameObject.Instantiate(baseUfo.gameObject, new Vector3(baseUfo.position.x, 0.3f, baseUfo.position.z), baseUfo.rotation).transform;
+        }
 
     }
+    public void ReloadUfoAppear()
+    {
+        Invoke("InstantiateUfo", ufoAppear);
+
+    }
+
 }
