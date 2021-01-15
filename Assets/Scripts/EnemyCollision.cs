@@ -24,7 +24,8 @@ public class EnemyCollision : MonoBehaviour
             Destroy(collision.gameObject);
             GameObject enemy = GetComponent<Transform>().gameObject;
             string tag = enemy.tag;
-            Destroy(enemy,1f);
+
+            Destroy(enemy,0.5f);
             PlayerScore.GetInstancePlayerScore().ScoreCounter(tag);
             if (tag.Equals("0"))
             {

@@ -25,7 +25,6 @@ public class EnemiesController : MonoBehaviour
     void MoveEnemy()
     {
         enemyHolder.position += Vector3.right * speed;
-        int i = 0;
         foreach (Transform enemy in enemyHolder){
             if (enemy.position.x < minBound || enemy.position.x> maxBound){
                 speed = -speed;
@@ -34,6 +33,12 @@ public class EnemiesController : MonoBehaviour
             }
             if (Random.value > fireRate)
             {
+                Animator animator = enemy.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetTrigger("Fire");
+                }
+                
                 GameObject go = GameObject.Instantiate(m_shotPrefab, enemy.position, enemy.rotation) as GameObject;           
                 GameObject.Destroy(go, 3f);
             }
