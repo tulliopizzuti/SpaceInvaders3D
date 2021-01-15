@@ -1567,7 +1567,7 @@ MonoBehaviour:
   minBound: -7
   maxBound: 7
   maxHeight: -4
-  fireRate: 0.97
+  fireRate: 0.98
   m_shotPrefab: {fileID: 4379724141178046104, guid: 31745907b47136e45887308dd9dfb658,
     type: 3}
 --- !u!4 &444660162
